@@ -5,9 +5,10 @@ package stronghold
 import (
 	"errors"
 	"fmt"
+	"os"
+
 	"github.com/awnumar/memguard"
 	"golang.org/x/crypto/blake2b"
-	"os"
 )
 
 type StrongholdNative struct {
@@ -149,7 +150,7 @@ func (s *StrongholdNative) Sign(recordPath string, data []byte) ([SignatureSize]
 	return sign(s.ptr, recordPath, data)
 }
 
-func (s* StrongholdNative) SignForDerived(index uint32, data []byte) ([SignatureSize]byte, error) {
+func (s *StrongholdNative) SignForDerived(index uint32, data []byte) ([SignatureSize]byte, error) {
 	recordPath := fmt.Sprintf("seed.%d", index)
 	return s.Sign(recordPath, data)
 }
