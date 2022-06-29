@@ -12,8 +12,8 @@ import (
 // TODO: Clean up paths once we have a working build pipeline
 
 /*
-#cgo LDFLAGS: -Wl,-rpath,${SRCDIR}/dist -L${SRCDIR}/dist -L${SRCDIR}/go/dist/ -lstronghold_native
-#include "dist/stronghold_native.h"
+#cgo LDFLAGS: -Wl,-rpath,${SRCDIR}/vendor -L${SRCDIR}/vendor -L${SRCDIR}/go/vendor/ -lstronghold_native
+#include "vendor/stronghold_native.h"
 */
 import "C"
 
